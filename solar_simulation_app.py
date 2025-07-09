@@ -270,4 +270,4 @@ if battery_capacity_kwh > 0:
 with st.expander("显示详细月度数据"):
     st.dataframe(df.style.format({col: "{:.1f}" for col in df.columns if col != "月份"}))
 
-st.caption("© 2023 太阳能模拟演示 - 所有数据仅供参考，实际性能可能因天气、设备效率等因素而异") 
+st.caption("© 2025 太阳能模拟演示 - 所有数据仅供参考，实际性能可能因天气、设备效率等因素而异") 
