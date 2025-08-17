@@ -9,7 +9,7 @@ BRANCH="${1:-main}"
 
 # === 路径配置（按你的项目实际情况）===
 PROJECT_ROOT="/opt/bitnami/projects/solar/Eurmaxi"
-VHOST_SRC="$PROJECT_ROOT/deploy/apache/solar-vhost.conf"
+VHOST_SRC="$PROJECT_ROOT/solar-vhost.conf"
 VHOST_DST="/opt/bitnami/apache/conf/vhosts/solar-vhost.conf"
 
 # Bitnami 自带 Python & Pip（与 mod_wsgi 一致）
