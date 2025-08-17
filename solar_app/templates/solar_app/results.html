@@ -1,6 +1,36 @@
 {% extends 'solar_app/base.html' %}
 {% load i18n %}
 
+{% block extra_head %}
+<style>
+    /* Results页面特定样式 */
+    .metric-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .metric-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-primary, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+    }
+    
+    .chart-container {
+        background: var(--bg-card, #ffffff);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: var(--shadow-md, 0 4px 8px rgba(0,0,0,0.1));
+        margin-bottom: 20px;
+        border: 1px solid var(--border-primary, #e2e8f0);
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <!-- 返回按钮 -->
 <div class="row mb-3">
@@ -17,24 +47,24 @@
         <h2 class="text-center mb-4">💰 {% trans "经济效益评估" %}</h2>
     </div>
     <div class="col-lg-4">
-        <div class="card text-center h-100 border-info">
+        <div class="card metric-card text-center h-100">
             <div class="card-body">
-                <h5 class="card-title text-info">
+                <h5 class="card-title">
                     <i class="fas fa-plug me-2"></i>{% trans "基准年度电费" %}
                 </h5>
-                <h3 class="text-primary">€ {{ results.baseline_cost|floatformat:0 }}</h3>
+                <div class="metric-value">€ {{ results.baseline_cost|floatformat:0 }}</div>
                 <p class="text-muted">不安装太阳能系统的年度电费</p>
             </div>
         </div>
     </div>
     <div class="col-lg-4">
-        <div class="card text-center h-100 border-warning">
+        <div class="card metric-card text-center h-100">
             <div class="card-body">
-                <h5 class="card-title text-warning">
+                <h5 class="card-title">
                     <i class="fas fa-solar-panel me-2"></i>{% trans "无储能方案" %}
                 </h5>
-                <h3 class="text-success">€ {{ results.cost_no_batt|floatformat:0 }}</h3>
-                <div class="badge bg-success fs-6">
+                <div class="metric-value text-success">€ {{ results.cost_no_batt|floatformat:0 }}</div>
+                <div class="badge bg-success fs-6 metric-change positive">
                     {% trans "节省" %} € {{ results.savings_no_batt|floatformat:0 }}
                 </div>
                 <p class="text-muted mt-2">仅安装太阳能面板</p>
@@ -42,13 +72,13 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <div class="card text-center h-100 border-success">
+        <div class="card metric-card text-center h-100">
             <div class="card-body">
-                <h5 class="card-title text-success">
+                <h5 class="card-title">
                     <i class="fas fa-battery-three-quarters me-2"></i>{% trans "有储能方案" %}
                 </h5>
-                <h3 class="text-success">€ {{ results.cost_with_batt|floatformat:0 }}</h3>
-                <div class="badge bg-success fs-6">
+                <div class="metric-value text-success">€ {{ results.cost_with_batt|floatformat:0 }}</div>
+                <div class="badge bg-success fs-6 metric-change positive">
                     {% trans "节省" %} € {{ results.savings_with_batt|floatformat:0 }}
                 </div>
                 <p class="text-muted mt-2">太阳能面板 + 电池储能</p>
@@ -93,44 +123,32 @@
     
     <!-- 发电量与用电量对比 -->
     <div class="col-lg-12 mb-4">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h5 class="card-title mb-0">
-                    <i class="fas fa-chart-line me-2"></i>{% trans "月度发电量与用电量对比" %}
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="generationConsumptionChart" width="400" height="200"></canvas>
-            </div>
+        <div class="chart-container">
+            <h5 class="mb-3">
+                <i class="fas fa-chart-line me-2"></i>{% trans "月度发电量与用电量对比" %}
+            </h5>
+            <canvas id="generationConsumptionChart" width="400" height="200"></canvas>
         </div>
     </div>
     
     <!-- 无储能方案 -->
     <div class="col-lg-6 mb-4">
-        <div class="card">
-            <div class="card-header bg-warning text-white">
-                <h5 class="card-title mb-0">
-                    <i class="fas fa-solar-panel me-2"></i>{% trans "光伏利用情况 - 无储能方案" %}
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="noBatteryChart" width="400" height="300"></canvas>
-            </div>
+        <div class="chart-container">
+            <h5 class="mb-3">
+                <i class="fas fa-solar-panel me-2"></i>{% trans "光伏利用情况 - 无储能方案" %}
+            </h5>
+            <canvas id="noBatteryChart" width="400" height="300"></canvas>
         </div>
     </div>
     
     <!-- 有储能方案 -->
     {% if params.battery_capacity_kwh > 0 %}
     <div class="col-lg-6 mb-4">
-        <div class="card">
-            <div class="card-header bg-success text-white">
-                <h5 class="card-title mb-0">
-                    <i class="fas fa-battery-three-quarters me-2"></i>{% trans "光伏利用情况 - 有储能方案" %}
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="withBatteryChart" width="400" height="300"></canvas>
-            </div>
+        <div class="chart-container">
+            <h5 class="mb-3">
+                <i class="fas fa-battery-three-quarters me-2"></i>{% trans "光伏利用情况 - 有储能方案" %}
+            </h5>
+            <canvas id="withBatteryChart" width="400" height="300"></canvas>
         </div>
     </div>
     {% endif %}
@@ -200,6 +218,21 @@
 
 {% block extra_js %}
 <script>
+// 检测深色主题
+function isDarkTheme() {
+    return document.body.classList.contains('dark-theme');
+}
+
+// 获取主题相关颜色
+function getThemeColors() {
+    const dark = isDarkTheme();
+    return {
+        textColor: dark ? '#ffffff' : '#333333',
+        gridColor: dark ? '#4a5568' : '#e2e8f0',
+        backgroundColor: dark ? '#1a2332' : '#ffffff'
+    };
+}
+
 // 图表数据
 const chartData = {
     noBattery: {{ chart_data.no_battery|safe }},
@@ -209,27 +242,47 @@ const chartData = {
 
 // 发电量与用电量对比图
 const ctxGenCons = document.getElementById('generationConsumptionChart').getContext('2d');
+const colors = getThemeColors();
 const generationConsumptionChart = new Chart(ctxGenCons, {
     type: 'line',
     data: chartData.generationConsumption,
     options: {
         responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    color: colors.textColor
+                }
+            },
+            title: {
+                display: true,
+                text: '月度发电量与用电量对比',
+                color: colors.textColor
+            }
+        },
         scales: {
+            x: {
+                ticks: {
+                    color: colors.textColor
+                },
+                grid: {
+                    color: colors.gridColor
+                }
+            },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: '电量 (kWh)'
+                    text: '电量 (kWh)',
+                    color: colors.textColor
+                },
+                ticks: {
+                    color: colors.textColor
+                },
+                grid: {
+                    color: colors.gridColor
                 }
-            }
-        },
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: '月度发电量与用电量对比'
             }
         }
     }
@@ -242,22 +295,38 @@ const noBatteryChart = new Chart(ctxNoBattery, {
     data: chartData.noBattery,
     options: {
         responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    color: colors.textColor
+                }
+            }
+        },
         scales: {
             x: {
                 stacked: true,
+                ticks: {
+                    color: colors.textColor
+                },
+                grid: {
+                    color: colors.gridColor
+                }
             },
             y: {
                 stacked: true,
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: '电量 (kWh)'
+                    text: '电量 (kWh)',
+                    color: colors.textColor
+                },
+                ticks: {
+                    color: colors.textColor
+                },
+                grid: {
+                    color: colors.gridColor
                 }
-            }
-        },
-        plugins: {
-            legend: {
-                position: 'top',
             }
         }
     }
@@ -271,22 +340,38 @@ const withBatteryChart = new Chart(ctxWithBattery, {
     data: chartData.withBattery,
     options: {
         responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    color: colors.textColor
+                }
+            }
+        },
         scales: {
             x: {
                 stacked: true,
+                ticks: {
+                    color: colors.textColor
+                },
+                grid: {
+                    color: colors.gridColor
+                }
             },
             y: {
                 stacked: true,
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: '电量 (kWh)'
+                    text: '电量 (kWh)',
+                    color: colors.textColor
+                },
+                ticks: {
+                    color: colors.textColor
+                },
+                grid: {
+                    color: colors.gridColor
                 }
-            }
-        },
-        plugins: {
-            legend: {
-                position: 'top',
             }
         }
     }
