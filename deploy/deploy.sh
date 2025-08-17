@@ -55,6 +55,12 @@ fi
 
 cp "$VHOST_SRC" "$VHOST_DST"
 
+sudo chown bitnami:daemon /opt/bitnami/projects/solar/Eurmaxi/db.sqlite3
+sudo chmod 664        /opt/bitnami/projects/solar/Eurmaxi/db.sqlite3
+
+sudo chown bitnami:daemon /opt/bitnami/projects/solar/Eurmaxi
+sudo chmod 775        /opt/bitnami/projects/solar/Eurmaxi
+
 log "Checking Apache configuration syntax"
 sudo /opt/bitnami/apache/bin/apachectl -t
 
@@ -62,3 +68,4 @@ log "Restarting Apache"
 sudo /opt/bitnami/ctlscript.sh restart apache
 
 log "✅ Deployment completed! Visit: http://3.75.185.85/"
+
