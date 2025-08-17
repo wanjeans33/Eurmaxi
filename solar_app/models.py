@@ -13,3 +13,4 @@ from django.db import models
 #     user_ip = models.GenericIPAddressField(null=True, blank=True)
 
 
+
