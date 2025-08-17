@@ -1,0 +1,5 @@
+# locale 目录用于存放多语言翻译文件。
+# 使用命令生成 po 文件：
+#   django-admin makemessages -l zh_Hans -l en -l de
+# 编辑 po 后，编译：
+#   django-admin compilemessages

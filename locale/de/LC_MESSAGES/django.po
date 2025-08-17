@@ -1,0 +1,257 @@
+# German translation
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-17 10:00+0000\n"
+"PO-Revision-Date: 2025-08-17 10:00+0000\n"
+"Last-Translator: Anonymous\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "太阳能模拟器"
+msgstr "Solarsimulator"
+
+msgid "首页"
+msgstr "Startseite"
+
+msgid "太阳能模拟演示 - 所有数据仅供参考，实际性能可能因天气、设备效率等因素而异"
+msgstr "Solar-Simulationsdemonstration - Alle Daten dienen nur als Referenz, die tatsächliche Leistung kann aufgrund von Wetter, Geräteeffizienz und anderen Faktoren variieren"
+
+msgid "德国家庭太阳能光伏模拟"
+msgstr "Simulation von Photovoltaikanlagen für deutsche Haushalte"
+
+msgid "估算德国典型家庭（2个成人+2个儿童）安装屋顶太阳能光伏系统（有储能/无储能）的经济效益"
+msgstr "Schätzung des wirtschaftlichen Nutzens der Installation von Photovoltaik-Dachanlagen (mit/ohne Speicher) für einen typischen deutschen Haushalt (2 Erwachsene + 2 Kinder)"
+
+msgid "模拟参数"
+msgstr "Simulationsparameter"
+
+msgid "开始模拟"
+msgstr "Simulation starten"
+
+msgid "返回参数设置"
+msgstr "Zurück zu den Parametern"
+
+msgid "经济效益评估"
+msgstr "Wirtschaftlichkeitsbewertung"
+
+msgid "基准年度电费"
+msgstr "Jährliche Stromkosten (Basis)"
+
+msgid "无储能方案"
+msgstr "Ohne Speicherlösung"
+
+msgid "有储能方案"
+msgstr "Mit Speicherlösung"
+
+msgid "节省"
+msgstr "Ersparnis"
+
+msgid "储能收益分析"
+msgstr "Analyse des Speichernutzens"
+
+msgid "额外投资"
+msgstr "Zusätzliche Investition"
+
+msgid "电池成本"
+msgstr "Batteriekosten"
+
+msgid "额外年度节省"
+msgstr "Zusätzliche jährliche Ersparnis"
+
+msgid "电池投资回收期"
+msgstr "Amortisationszeit der Batterieinvestition"
+
+msgid "约"
+msgstr "Etwa"
+
+msgid "年"
+msgstr "Jahre"
+
+msgid "无法回收（储能方案收益不足）"
+msgstr "Nicht amortisierbar (unzureichender Nutzen der Speicherlösung)"
+
+msgid "月度发电与用电分析"
+msgstr "Monatliche Analyse von Erzeugung und Verbrauch"
+
+msgid "月度发电量与用电量对比"
+msgstr "Monatlicher Vergleich zwischen Erzeugung und Verbrauch"
+
+msgid "光伏利用情况 - 无储能方案"
+msgstr "PV-Nutzung - Ohne Speicherlösung"
+
+msgid "光伏利用情况 - 有储能方案"
+msgstr "PV-Nutzung - Mit Speicherlösung"
+
+msgid "详细月度数据"
+msgstr "Detaillierte monatliche Daten"
+
+msgid "太阳能板容量 [kWp]"
+msgstr "Solarmodulleistung [kWp]"
+
+msgid "光伏阵列的装机峰值功率"
+msgstr "Installierte Spitzenleistung der PV-Anlage"
+
+msgid "光伏阵列成本 [€]"
+msgstr "Kosten der PV-Anlage [€]"
+
+msgid "逆变器功率 [kW]"
+msgstr "Wechselrichterleistung [kW]"
+
+msgid "逆变器的交流输出限制"
+msgstr "Wechselstrom-Ausgangsleistungsbegrenzung des Wechselrichters"
+
+msgid "逆变器成本 [€]"
+msgstr "Wechselrichterkosten [€]"
+
+msgid "电池容量 [kWh]"
+msgstr "Batteriekapazität [kWh]"
+
+msgid "可用电池容量。0 = 仅无储能方案"
+msgstr "Verfügbare Batteriekapazität. 0 = Nur Lösung ohne Speicher"
+
+msgid "电池成本 [€]"
+msgstr "Batteriekosten [€]"
+
+msgid "电网电价 [€/kWh]"
+msgstr "Strompreis [€/kWh]"
+
+msgid "上网电价 [€/kWh]"
+msgstr "Einspeisevergütung [€/kWh]"
+
+msgid "年度家庭用电量 [kWh]"
+msgstr "Jährlicher Stromverbrauch des Haushalts [kWh]"
+
+msgid "典型的2成人+2儿童家庭 ≈ 4000 kWh/年"
+msgstr "Typischer Haushalt mit 2 Erwachsenen + 2 Kindern ≈ 4000 kWh/Jahr"
+
+msgid "22-06时 [%]"
+msgstr "22-06 Uhr [%]"
+
+msgid "06-09时 & 17-22时 [%]"
+msgstr "06-09 Uhr & 17-22 Uhr [%]"
+
+msgid "09-17时 [%]"
+msgstr "09-17 Uhr [%]"
+
+# Table headers
+msgid "月份"
+msgstr "Monat"
+
+msgid "发电量 (kWh)"
+msgstr "Erzeugung (kWh)"
+
+msgid "用电量 (kWh)"
+msgstr "Verbrauch (kWh)"
+
+msgid "自用 (kWh)"
+msgstr "Eigenverbrauch (kWh)"
+
+msgid "上网 (kWh)"
+msgstr "Netzeinspeisung (kWh)"
+
+msgid "购电 (kWh)"
+msgstr "Netzbezug (kWh)"
+
+# Description texts
+msgid "不安装太阳能系统的年度电费"
+msgstr "Jährliche Stromkosten ohne Solaranlage"
+
+msgid "仅安装太阳能面板"
+msgstr "Nur Solarmodule installiert"
+
+msgid "太阳能面板 + 电池储能"
+msgstr "Solarmodule + Batteriespeicher"
+
+# Section headers and descriptions
+msgid "系统组件"
+msgstr "Systemkomponenten"
+
+msgid "电池（可选）"
+msgstr "Batterie (Optional)"
+
+msgid "电价"
+msgstr "Strompreise"
+
+msgid "用电模式"
+msgstr "Verbrauchsmuster"
+
+msgid "日间用电分布"
+msgstr "Tägliche Verbrauchsverteilung"
+
+msgid "必须总和为100%"
+msgstr "Muss insgesamt 100% ergeben"
+
+msgid "模型说明"
+msgstr "Modellbeschreibung"
+
+msgid "主要功能："
+msgstr "Hauptfunktionen:"
+
+msgid "模型特点："
+msgstr "Modelleigenschaften:"
+
+msgid "注意事项"
+msgstr "Wichtige Hinweise"
+
+# Feature list items
+msgid "用户可调参数 - 光伏板/逆变器/电池规格和成本，电网价格，用电模式"
+msgstr "Benutzereinstellbare Parameter - PV-Module/Wechselrichter/Batteriespezifikationen und Kosten, Netzpreise, Verbrauchsmuster"
+
+msgid "用电量估算 - 从典型的4000kWh/年家庭开始，按月份不均匀分布（冬季略高）"
+msgstr "Verbrauchsschätzung - Ausgehend von einem typischen 4000kWh/Jahr-Haushalt, ungleichmäßig nach Monaten verteilt (im Winter etwas höher)"
+
+msgid "发电量估算 - 使用德国月平均太阳辐照度，假设1kWp≈1000kWh/年"
+msgstr "Erzeugungsschätzung - Mit deutscher monatlicher durchschnittlicher Sonneneinstrahlung, unter der Annahme 1kWp≈1000kWh/Jahr"
+
+msgid "电池模型（简化）- 每天允许一次完整充放电循环"
+msgstr "Batteriemodell (vereinfacht) - Ein vollständiger Lade-Entlade-Zyklus pro Tag erlaubt"
+
+msgid "现金流对比 - 计算两种方案的年度电费节省"
+msgstr "Cashflow-Vergleich - Berechnung der jährlichen Stromkosteneinsparungen für beide Lösungen"
+
+msgid "可视化 - 图表显示光伏发电的自用与上网比例"
+msgstr "Visualisierung - Diagramme zeigen das Verhältnis von Eigenverbrauch zu Netzeinspeisung der PV-Erzeugung"
+
+# Model characteristics
+msgid "采用月度分辨率以便于理解和性能优化"
+msgstr "Verwendet monatliche Auflösung für besseres Verständnis und Leistungsoptimierung"
+
+msgid "基于德国月平均太阳辐照度数据"
+msgstr "Basiert auf deutschen monatlichen durchschnittlichen Sonneneinstrahlungsdaten"
+
+msgid "考虑季节性用电变化（冬季供暖需求）"
+msgstr "Berücksichtigt saisonale Verbrauchsschwankungen (Heizbedarf im Winter)"
+
+msgid "简化但透明的计算模型"
+msgstr "Vereinfachtes aber transparentes Berechnungsmodell"
+
+msgid "适用于德国典型家庭（2成人+2儿童）"
+msgstr "Geeignet für typische deutsche Haushalte (2 Erwachsene + 2 Kinder)"
+
+msgid "所有计算都有详细说明供教学使用"
+msgstr "Alle Berechnungen haben detaillierte Erklärungen für Bildungszwecke"
+
+# Warning text
+msgid "所有数据仅供参考，实际性能可能因天气、设备效率、安装角度、阴影遮挡等因素而异。建议咨询专业的太阳能安装商获取准确评估。"
+msgstr "Alle Daten dienen nur als Referenz. Die tatsächliche Leistung kann aufgrund von Wetter, Geräteeffizienz, Installationswinkel, Schattenverschattung und anderen Faktoren variieren. Wir empfehlen die Beratung durch einen professionellen Solarinstallateur für eine genaue Bewertung."
+
+# Chart labels
+msgid "电量 (kWh)"
+msgstr "Elektrizität (kWh)"
+
+# JavaScript validation messages
+msgid "当前总和为"
+msgstr "Aktuelle Summe ist"
+
+msgid "需要为 100%"
+msgstr "muss 100% sein"
+
+# Form validation error
+msgid "日间用电百分比必须总和为100%！当前总和为"
+msgstr "Die täglichen Verbrauchsprozentsätze müssen insgesamt 100% ergeben! Aktuelle Summe ist"

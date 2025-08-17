@@ -1,0 +1,296 @@
+{% extends 'solar_app/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<!-- 返回按钮 -->
+<div class="row mb-3">
+    <div class="col-12">
+        <a href="{% url 'solar_app:index' %}" class="btn btn-outline-primary">
+            <i class="fas fa-arrow-left me-2"></i>{% trans "返回参数设置" %}
+        </a>
+    </div>
+</div>
+
+<!-- 经济效益概览 -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="text-center mb-4">💰 {% trans "经济效益评估" %}</h2>
+    </div>
+    <div class="col-lg-4">
+        <div class="card text-center h-100 border-info">
+            <div class="card-body">
+                <h5 class="card-title text-info">
+                    <i class="fas fa-plug me-2"></i>{% trans "基准年度电费" %}
+                </h5>
+                <h3 class="text-primary">€ {{ results.baseline_cost|floatformat:0 }}</h3>
+                <p class="text-muted">不安装太阳能系统的年度电费</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card text-center h-100 border-warning">
+            <div class="card-body">
+                <h5 class="card-title text-warning">
+                    <i class="fas fa-solar-panel me-2"></i>{% trans "无储能方案" %}
+                </h5>
+                <h3 class="text-success">€ {{ results.cost_no_batt|floatformat:0 }}</h3>
+                <div class="badge bg-success fs-6">
+                    {% trans "节省" %} € {{ results.savings_no_batt|floatformat:0 }}
+                </div>
+                <p class="text-muted mt-2">仅安装太阳能面板</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card text-center h-100 border-success">
+            <div class="card-body">
+                <h5 class="card-title text-success">
+                    <i class="fas fa-battery-three-quarters me-2"></i>{% trans "有储能方案" %}
+                </h5>
+                <h3 class="text-success">€ {{ results.cost_with_batt|floatformat:0 }}</h3>
+                <div class="badge bg-success fs-6">
+                    {% trans "节省" %} € {{ results.savings_with_batt|floatformat:0 }}
+                </div>
+                <p class="text-muted mt-2">太阳能面板 + 电池储能</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 年度节省对比 -->
+{% if params.battery_capacity_kwh > 0 %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <h5 class="alert-heading">
+                <i class="fas fa-chart-line me-2"></i>{% trans "储能收益分析" %}
+            </h5>
+            <p class="mb-2">
+                <strong>{% trans "额外投资" %}：</strong>{% trans "电池成本" %} € {{ params.battery_cost|floatformat:0 }}
+            </p>
+            <p class="mb-2">
+                <strong>{% trans "额外年度节省" %}：</strong>€ {{ extra_savings|floatformat:0 }}
+            </p>
+            {% if payback_years %}
+            <p class="mb-0">
+                <strong>{% trans "电池投资回收期" %}：</strong>{% trans "约" %} {{ payback_years|floatformat:1 }} {% trans "年" %}
+            </p>
+            {% else %}
+            <p class="mb-0">
+                <strong>{% trans "电池投资回收期" %}：</strong>{% trans "无法回收（储能方案收益不足）" %}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- 图表区域 -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h3 class="text-center mb-4">📊 {% trans "月度发电与用电分析" %}</h3>
+    </div>
+    
+    <!-- 发电量与用电量对比 -->
+    <div class="col-lg-12 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-chart-line me-2"></i>{% trans "月度发电量与用电量对比" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="generationConsumptionChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 无储能方案 -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-solar-panel me-2"></i>{% trans "光伏利用情况 - 无储能方案" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="noBatteryChart" width="400" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 有储能方案 -->
+    {% if params.battery_capacity_kwh > 0 %}
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-battery-three-quarters me-2"></i>{% trans "光伏利用情况 - 有储能方案" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="withBatteryChart" width="400" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- 详细数据表格 -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-table me-2"></i>{% trans "详细月度数据" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>月份</th>
+                                <th>发电量 (kWh)</th>
+                                <th>用电量 (kWh)</th>
+                                <th colspan="3" class="text-center bg-warning">无储能方案</th>
+                                {% if params.battery_capacity_kwh > 0 %}
+                                <th colspan="3" class="text-center bg-success">有储能方案</th>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th class="bg-warning">自用 (kWh)</th>
+                                <th class="bg-warning">上网 (kWh)</th>
+                                <th class="bg-warning">购电 (kWh)</th>
+                                {% if params.battery_capacity_kwh > 0 %}
+                                <th class="bg-success">自用 (kWh)</th>
+                                <th class="bg-success">上网 (kWh)</th>
+                                <th class="bg-success">购电 (kWh)</th>
+                                {% endif %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for month_data in results.monthly_data %}
+                            <tr>
+                                <td><strong>{{ month_data.月份 }}</strong></td>
+                                <td>{{ month_data.发电量|floatformat:1 }}</td>
+                                <td>{{ month_data.用电量|floatformat:1 }}</td>
+                                <td>{{ month_data.自用电量_无储能|floatformat:1 }}</td>
+                                <td>{{ month_data.上网电量_无储能|floatformat:1 }}</td>
+                                <td>{{ month_data.购电量_无储能|floatformat:1 }}</td>
+                                {% if params.battery_capacity_kwh > 0 %}
+                                <td>{{ month_data.自用电量_有储能|floatformat:1 }}</td>
+                                <td>{{ month_data.上网电量_有储能|floatformat:1 }}</td>
+                                <td>{{ month_data.购电量_有储能|floatformat:1 }}</td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 图表数据
+const chartData = {
+    noBattery: {{ chart_data.no_battery|safe }},
+    withBattery: {{ chart_data.with_battery|safe }},
+    generationConsumption: {{ chart_data.generation_consumption|safe }}
+};
+
+// 发电量与用电量对比图
+const ctxGenCons = document.getElementById('generationConsumptionChart').getContext('2d');
+const generationConsumptionChart = new Chart(ctxGenCons, {
+    type: 'line',
+    data: chartData.generationConsumption,
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: '电量 (kWh)'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: '月度发电量与用电量对比'
+            }
+        }
+    }
+});
+
+// 无储能方案图表
+const ctxNoBattery = document.getElementById('noBatteryChart').getContext('2d');
+const noBatteryChart = new Chart(ctxNoBattery, {
+    type: 'bar',
+    data: chartData.noBattery,
+    options: {
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+            },
+            y: {
+                stacked: true,
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: '电量 (kWh)'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            }
+        }
+    }
+});
+
+// 有储能方案图表
+{% if params.battery_capacity_kwh > 0 %}
+const ctxWithBattery = document.getElementById('withBatteryChart').getContext('2d');
+const withBatteryChart = new Chart(ctxWithBattery, {
+    type: 'bar',
+    data: chartData.withBattery,
+    options: {
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+            },
+            y: {
+                stacked: true,
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: '电量 (kWh)'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            }
+        }
+    }
+});
+{% endif %}
+</script>
+{% endblock %}

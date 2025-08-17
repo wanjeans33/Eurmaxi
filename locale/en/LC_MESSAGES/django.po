@@ -1,0 +1,257 @@
+# English translation
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-17 10:00+0000\n"
+"PO-Revision-Date: 2025-08-17 10:00+0000\n"
+"Last-Translator: Anonymous\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "太阳能模拟器"
+msgstr "Solar Simulator"
+
+msgid "首页"
+msgstr "Home"
+
+msgid "太阳能模拟演示 - 所有数据仅供参考，实际性能可能因天气、设备效率等因素而异"
+msgstr "Solar Simulation Demo - All data is for reference only, actual performance may vary due to weather, equipment efficiency, and other factors"
+
+msgid "德国家庭太阳能光伏模拟"
+msgstr "German Household Solar PV Simulation"
+
+msgid "估算德国典型家庭（2个成人+2个儿童）安装屋顶太阳能光伏系统（有储能/无储能）的经济效益"
+msgstr "Estimate the economic benefits of installing rooftop solar PV systems (with/without storage) for a typical German household (2 adults + 2 children)"
+
+msgid "模拟参数"
+msgstr "Simulation Parameters"
+
+msgid "开始模拟"
+msgstr "Start Simulation"
+
+msgid "返回参数设置"
+msgstr "Back to Parameters"
+
+msgid "经济效益评估"
+msgstr "Economic Benefit Assessment"
+
+msgid "基准年度电费"
+msgstr "Baseline Annual Electricity Cost"
+
+msgid "无储能方案"
+msgstr "Without Storage Solution"
+
+msgid "有储能方案"
+msgstr "With Storage Solution"
+
+msgid "节省"
+msgstr "Saving"
+
+msgid "储能收益分析"
+msgstr "Storage Benefit Analysis"
+
+msgid "额外投资"
+msgstr "Additional Investment"
+
+msgid "电池成本"
+msgstr "Battery Cost"
+
+msgid "额外年度节省"
+msgstr "Additional Annual Savings"
+
+msgid "电池投资回收期"
+msgstr "Battery Investment Payback Period"
+
+msgid "约"
+msgstr "About"
+
+msgid "年"
+msgstr "years"
+
+msgid "无法回收（储能方案收益不足）"
+msgstr "Unable to recover (insufficient storage solution benefits)"
+
+msgid "月度发电与用电分析"
+msgstr "Monthly Generation and Consumption Analysis"
+
+msgid "月度发电量与用电量对比"
+msgstr "Monthly Generation vs. Consumption Comparison"
+
+msgid "光伏利用情况 - 无储能方案"
+msgstr "PV Utilization - Without Storage Solution"
+
+msgid "光伏利用情况 - 有储能方案"
+msgstr "PV Utilization - With Storage Solution"
+
+msgid "详细月度数据"
+msgstr "Detailed Monthly Data"
+
+msgid "太阳能板容量 [kWp]"
+msgstr "Solar Panel Capacity [kWp]"
+
+msgid "光伏阵列的装机峰值功率"
+msgstr "Installed peak power of the PV array"
+
+msgid "光伏阵列成本 [€]"
+msgstr "PV Array Cost [€]"
+
+msgid "逆变器功率 [kW]"
+msgstr "Inverter Power [kW]"
+
+msgid "逆变器的交流输出限制"
+msgstr "AC output limit of the inverter"
+
+msgid "逆变器成本 [€]"
+msgstr "Inverter Cost [€]"
+
+msgid "电池容量 [kWh]"
+msgstr "Battery Capacity [kWh]"
+
+msgid "可用电池容量。0 = 仅无储能方案"
+msgstr "Available battery capacity. 0 = Only solution without storage"
+
+msgid "电池成本 [€]"
+msgstr "Battery Cost [€]"
+
+msgid "电网电价 [€/kWh]"
+msgstr "Grid Electricity Price [€/kWh]"
+
+msgid "上网电价 [€/kWh]"
+msgstr "Feed-in Tariff [€/kWh]"
+
+msgid "年度家庭用电量 [kWh]"
+msgstr "Annual Household Electricity Consumption [kWh]"
+
+msgid "典型的2成人+2儿童家庭 ≈ 4000 kWh/年"
+msgstr "Typical 2 adults + 2 children household ≈ 4000 kWh/year"
+
+msgid "22-06时 [%]"
+msgstr "22-06h [%]"
+
+msgid "06-09时 & 17-22时 [%]"
+msgstr "06-09h & 17-22h [%]"
+
+msgid "09-17时 [%]"
+msgstr "09-17h [%]"
+
+# Table headers
+msgid "月份"
+msgstr "Month"
+
+msgid "发电量 (kWh)"
+msgstr "Generation (kWh)"
+
+msgid "用电量 (kWh)"
+msgstr "Consumption (kWh)"
+
+msgid "自用 (kWh)"
+msgstr "Self-consumption (kWh)"
+
+msgid "上网 (kWh)"
+msgstr "Grid Feed-in (kWh)"
+
+msgid "购电 (kWh)"
+msgstr "Grid Purchase (kWh)"
+
+# Description texts
+msgid "不安装太阳能系统的年度电费"
+msgstr "Annual electricity cost without a solar system"
+
+msgid "仅安装太阳能面板"
+msgstr "Only solar panels installed"
+
+msgid "太阳能面板 + 电池储能"
+msgstr "Solar panels + battery storage"
+
+# Section headers and descriptions
+msgid "系统组件"
+msgstr "System Components"
+
+msgid "电池（可选）"
+msgstr "Battery (Optional)"
+
+msgid "电价"
+msgstr "Electricity Prices"
+
+msgid "用电模式"
+msgstr "Consumption Pattern"
+
+msgid "日间用电分布"
+msgstr "Daily Consumption Distribution"
+
+msgid "必须总和为100%"
+msgstr "Must total 100%"
+
+msgid "模型说明"
+msgstr "Model Description"
+
+msgid "主要功能："
+msgstr "Main Features:"
+
+msgid "模型特点："
+msgstr "Model Characteristics:"
+
+msgid "注意事项"
+msgstr "Important Notes"
+
+# Feature list items
+msgid "用户可调参数 - 光伏板/逆变器/电池规格和成本，电网价格，用电模式"
+msgstr "User-adjustable parameters - PV panels/inverter/battery specifications and costs, grid prices, consumption patterns"
+
+msgid "用电量估算 - 从典型的4000kWh/年家庭开始，按月份不均匀分布（冬季略高）"
+msgstr "Consumption estimation - Starting from a typical 4000kWh/year household, unevenly distributed by month (slightly higher in winter)"
+
+msgid "发电量估算 - 使用德国月平均太阳辐照度，假设1kWp≈1000kWh/年"
+msgstr "Generation estimation - Using German monthly average solar irradiance, assuming 1kWp≈1000kWh/year"
+
+msgid "电池模型（简化）- 每天允许一次完整充放电循环"
+msgstr "Battery model (simplified) - One full charge-discharge cycle allowed per day"
+
+msgid "现金流对比 - 计算两种方案的年度电费节省"
+msgstr "Cash flow comparison - Calculate annual electricity cost savings for both solutions"
+
+msgid "可视化 - 图表显示光伏发电的自用与上网比例"
+msgstr "Visualization - Charts showing self-consumption vs. grid feed-in ratio of PV generation"
+
+# Model characteristics
+msgid "采用月度分辨率以便于理解和性能优化"
+msgstr "Uses monthly resolution for better understanding and performance optimization"
+
+msgid "基于德国月平均太阳辐照度数据"
+msgstr "Based on German monthly average solar irradiance data"
+
+msgid "考虑季节性用电变化（冬季供暖需求）"
+msgstr "Considers seasonal consumption variations (winter heating demand)"
+
+msgid "简化但透明的计算模型"
+msgstr "Simplified but transparent calculation model"
+
+msgid "适用于德国典型家庭（2成人+2儿童）"
+msgstr "Suitable for typical German households (2 adults + 2 children)"
+
+msgid "所有计算都有详细说明供教学使用"
+msgstr "All calculations have detailed explanations for educational purposes"
+
+# Warning text
+msgid "所有数据仅供参考，实际性能可能因天气、设备效率、安装角度、阴影遮挡等因素而异。建议咨询专业的太阳能安装商获取准确评估。"
+msgstr "All data is for reference only. Actual performance may vary due to weather, equipment efficiency, installation angle, shadow obstruction, and other factors. We recommend consulting a professional solar installer for accurate assessment."
+
+# Chart labels
+msgid "电量 (kWh)"
+msgstr "Electricity (kWh)"
+
+# JavaScript validation messages
+msgid "当前总和为"
+msgstr "Current total is"
+
+msgid "需要为 100%"
+msgstr "must be 100%"
+
+# Form validation error
+msgid "日间用电百分比必须总和为100%！当前总和为"
+msgstr "Daily consumption percentages must total 100%! Current total is"

@@ -1,0 +1,257 @@
+# Chinese translation
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-17 10:00+0000\n"
+"PO-Revision-Date: 2025-08-17 10:00+0000\n"
+"Last-Translator: Anonymous\n"
+"Language-Team: Chinese\n"
+"Language: zh_hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "太阳能模拟器"
+msgstr "太阳能模拟器"
+
+msgid "首页"
+msgstr "首页"
+
+msgid "太阳能模拟演示 - 所有数据仅供参考，实际性能可能因天气、设备效率等因素而异"
+msgstr "太阳能模拟演示 - 所有数据仅供参考，实际性能可能因天气、设备效率等因素而异"
+
+msgid "德国家庭太阳能光伏模拟"
+msgstr "德国家庭太阳能光伏模拟"
+
+msgid "估算德国典型家庭（2个成人+2个儿童）安装屋顶太阳能光伏系统（有储能/无储能）的经济效益"
+msgstr "估算德国典型家庭（2个成人+2个儿童）安装屋顶太阳能光伏系统（有储能/无储能）的经济效益"
+
+msgid "模拟参数"
+msgstr "模拟参数"
+
+msgid "开始模拟"
+msgstr "开始模拟"
+
+msgid "返回参数设置"
+msgstr "返回参数设置"
+
+msgid "经济效益评估"
+msgstr "经济效益评估"
+
+msgid "基准年度电费"
+msgstr "基准年度电费"
+
+msgid "无储能方案"
+msgstr "无储能方案"
+
+msgid "有储能方案"
+msgstr "有储能方案"
+
+msgid "节省"
+msgstr "节省"
+
+msgid "储能收益分析"
+msgstr "储能收益分析"
+
+msgid "额外投资"
+msgstr "额外投资"
+
+msgid "电池成本"
+msgstr "电池成本"
+
+msgid "额外年度节省"
+msgstr "额外年度节省"
+
+msgid "电池投资回收期"
+msgstr "电池投资回收期"
+
+msgid "约"
+msgstr "约"
+
+msgid "年"
+msgstr "年"
+
+msgid "无法回收（储能方案收益不足）"
+msgstr "无法回收（储能方案收益不足）"
+
+msgid "月度发电与用电分析"
+msgstr "月度发电与用电分析"
+
+msgid "月度发电量与用电量对比"
+msgstr "月度发电量与用电量对比"
+
+msgid "光伏利用情况 - 无储能方案"
+msgstr "光伏利用情况 - 无储能方案"
+
+msgid "光伏利用情况 - 有储能方案"
+msgstr "光伏利用情况 - 有储能方案"
+
+msgid "详细月度数据"
+msgstr "详细月度数据"
+
+msgid "太阳能板容量 [kWp]"
+msgstr "太阳能板容量 [kWp]"
+
+msgid "光伏阵列的装机峰值功率"
+msgstr "光伏阵列的装机峰值功率"
+
+msgid "光伏阵列成本 [€]"
+msgstr "光伏阵列成本 [€]"
+
+msgid "逆变器功率 [kW]"
+msgstr "逆变器功率 [kW]"
+
+msgid "逆变器的交流输出限制"
+msgstr "逆变器的交流输出限制"
+
+msgid "逆变器成本 [€]"
+msgstr "逆变器成本 [€]"
+
+msgid "电池容量 [kWh]"
+msgstr "电池容量 [kWh]"
+
+msgid "可用电池容量。0 = 仅无储能方案"
+msgstr "可用电池容量。0 = 仅无储能方案"
+
+msgid "电池成本 [€]"
+msgstr "电池成本 [€]"
+
+msgid "电网电价 [€/kWh]"
+msgstr "电网电价 [€/kWh]"
+
+msgid "上网电价 [€/kWh]"
+msgstr "上网电价 [€/kWh]"
+
+msgid "年度家庭用电量 [kWh]"
+msgstr "年度家庭用电量 [kWh]"
+
+msgid "典型的2成人+2儿童家庭 ≈ 4000 kWh/年"
+msgstr "典型的2成人+2儿童家庭 ≈ 4000 kWh/年"
+
+msgid "22-06时 [%]"
+msgstr "22-06时 [%]"
+
+msgid "06-09时 & 17-22时 [%]"
+msgstr "06-09时 & 17-22时 [%]"
+
+msgid "09-17时 [%]"
+msgstr "09-17时 [%]"
+
+# Table headers
+msgid "月份"
+msgstr "月份"
+
+msgid "发电量 (kWh)"
+msgstr "发电量 (kWh)"
+
+msgid "用电量 (kWh)"
+msgstr "用电量 (kWh)"
+
+msgid "自用 (kWh)"
+msgstr "自用 (kWh)"
+
+msgid "上网 (kWh)"
+msgstr "上网 (kWh)"
+
+msgid "购电 (kWh)"
+msgstr "购电 (kWh)"
+
+# Description texts
+msgid "不安装太阳能系统的年度电费"
+msgstr "不安装太阳能系统的年度电费"
+
+msgid "仅安装太阳能面板"
+msgstr "仅安装太阳能面板"
+
+msgid "太阳能面板 + 电池储能"
+msgstr "太阳能面板 + 电池储能"
+
+# Section headers and descriptions
+msgid "系统组件"
+msgstr "系统组件"
+
+msgid "电池（可选）"
+msgstr "电池（可选）"
+
+msgid "电价"
+msgstr "电价"
+
+msgid "用电模式"
+msgstr "用电模式"
+
+msgid "日间用电分布"
+msgstr "日间用电分布"
+
+msgid "必须总和为100%"
+msgstr "必须总和为100%"
+
+msgid "模型说明"
+msgstr "模型说明"
+
+msgid "主要功能："
+msgstr "主要功能："
+
+msgid "模型特点："
+msgstr "模型特点："
+
+msgid "注意事项"
+msgstr "注意事项"
+
+# Feature list items
+msgid "用户可调参数 - 光伏板/逆变器/电池规格和成本，电网价格，用电模式"
+msgstr "用户可调参数 - 光伏板/逆变器/电池规格和成本，电网价格，用电模式"
+
+msgid "用电量估算 - 从典型的4000kWh/年家庭开始，按月份不均匀分布（冬季略高）"
+msgstr "用电量估算 - 从典型的4000kWh/年家庭开始，按月份不均匀分布（冬季略高）"
+
+msgid "发电量估算 - 使用德国月平均太阳辐照度，假设1kWp≈1000kWh/年"
+msgstr "发电量估算 - 使用德国月平均太阳辐照度，假设1kWp≈1000kWh/年"
+
+msgid "电池模型（简化）- 每天允许一次完整充放电循环"
+msgstr "电池模型（简化）- 每天允许一次完整充放电循环"
+
+msgid "现金流对比 - 计算两种方案的年度电费节省"
+msgstr "现金流对比 - 计算两种方案的年度电费节省"
+
+msgid "可视化 - 图表显示光伏发电的自用与上网比例"
+msgstr "可视化 - 图表显示光伏发电的自用与上网比例"
+
+# Model characteristics
+msgid "采用月度分辨率以便于理解和性能优化"
+msgstr "采用月度分辨率以便于理解和性能优化"
+
+msgid "基于德国月平均太阳辐照度数据"
+msgstr "基于德国月平均太阳辐照度数据"
+
+msgid "考虑季节性用电变化（冬季供暖需求）"
+msgstr "考虑季节性用电变化（冬季供暖需求）"
+
+msgid "简化但透明的计算模型"
+msgstr "简化但透明的计算模型"
+
+msgid "适用于德国典型家庭（2成人+2儿童）"
+msgstr "适用于德国典型家庭（2成人+2儿童）"
+
+msgid "所有计算都有详细说明供教学使用"
+msgstr "所有计算都有详细说明供教学使用"
+
+# Warning text
+msgid "所有数据仅供参考，实际性能可能因天气、设备效率、安装角度、阴影遮挡等因素而异。建议咨询专业的太阳能安装商获取准确评估。"
+msgstr "所有数据仅供参考，实际性能可能因天气、设备效率、安装角度、阴影遮挡等因素而异。建议咨询专业的太阳能安装商获取准确评估。"
+
+# Chart labels
+msgid "电量 (kWh)"
+msgstr "电量 (kWh)"
+
+# JavaScript validation messages
+msgid "当前总和为"
+msgstr "当前总和为"
+
+msgid "需要为 100%"
+msgstr "需要为 100%"
+
+# Form validation error
+msgid "日间用电百分比必须总和为100%！当前总和为"
+msgstr "日间用电百分比必须总和为100%！当前总和为"
