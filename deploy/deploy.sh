@@ -31,8 +31,8 @@ git pull --ff-only origin "$BRANCH"
 log "Installing/updating dependencies (requirements.txt)"
 $PIP install -r requirements.txt
 
-log "Compiling translation files"
-$PY manage.py compilemessages
+# log "Compiling translation files"
+# $PY manage.py compilemessages
 
 log "Running database migrations"
 $PY manage.py migrate --noinput
